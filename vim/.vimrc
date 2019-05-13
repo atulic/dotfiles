@@ -2,9 +2,11 @@
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
