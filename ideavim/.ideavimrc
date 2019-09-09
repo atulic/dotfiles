@@ -1,0 +1,26 @@
+set ignorecase 
+set smartcase
+set wrapscan
+set hlsearch
+
+" Use hybrid relative linenumbers
+set number relativenumber
+set nu rnu
+
+" Use the system clipboard
+set clipboard+=unnamed
+
+nnoremap ; :
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action Back<CR>
+
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+nnoremap cc :action CommentByLineComment<CR>
+
+nnoremap ,t :action TsLintFileFixAction<CR>>
+
+" Reload .ideavimrc
+nmap <leader>R :source ~/.ideavimrc<CR>
