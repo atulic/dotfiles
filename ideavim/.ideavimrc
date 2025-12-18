@@ -1,21 +1,25 @@
-" --- Core Vim Settings ---
-set clipboard+=unnamedplus      " Sync with system clipboard
-set number                      " Line numbers
-set scrolloff=8                 " Keep 8 lines above/below cursor
-set sidescrolloff=8             " Keep 8 columns left/right
-set ignorecase                  " Case insensitive search
-set smartcase                   " Case sensitive if capital used
-set incsearch                   " Incremental search
-set hlsearch                    " Highlight search results
-set showmode                    " Show current mode
-set surround                    " Enable surround plugin (ys/cs/ds)
-set multiple-cursors            " Enable multiple cursors (optional)
-set commentary                  " Enable commentary (gcc/gc)
-set sneak                       " Enable sneak (s/S) for 2-char jump
-set which-key                   " Show key-chord popup
-set notimeout                   " Wait indefinitely for leader keys
+" =============================================================================
+"  LAZYVIM-INSPIRED IDEAVIM CONFIG
+" =============================================================================
 
-" --- Leader Key ---
+" --- Core Vim Settings ---
+set clipboard+=unnamedplus
+set number
+set scrolloff=8
+set sidescrolloff=8
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set showmode
+set surround
+set multiple-cursors
+set commentary
+set sneak
+set which-key
+set notimeout
+
+ -- Leader Key ---
 let mapleader = " "
 
 " --- Visual bell instead of audible MacOS alert ---
@@ -40,9 +44,8 @@ nnoremap <leader>bo :action CloseAllEditorsButActive<CR> " Close other tabs
 " =============================================================================
 "  BUFFER NAVIGATION
 " =============================================================================
-" Shift + h/l to cycle buffers (tabs)
-nnoremap <S-h> :action PreviousEditorTab<CR>
-nnoremap <S-l> :action NextEditorTab<CR>
+nnoremap { :action PreviousTab<CR>
+nnoremap } :action NextTab<CR>
 nnoremap <leader>bb :action RecentFiles<CR>         " Switch buffer (Recent files)
 nnoremap <leader>bd :action CloseContent<CR>        " Delete buffer
 
@@ -79,7 +82,6 @@ nnoremap gi :action GotoImplementation<CR>
 " Actions
 nnoremap K :action QuickJavaDoc<CR>                 " Hover documentation
 nnoremap <leader>cr :action RenameElement<CR>
-earch Everything (Commands/Files)
 
 " Diagnostics (Trouble.nvim equivalent)
 nnoremap <leader>xx :action ActivateProblemsViewToolWindow<CR>
@@ -88,6 +90,7 @@ nnoremap ]d :action GotoNextError<CR>
 
 " Formatting
 nnoremap <leader>cf :action ReformatCode<CR>
+nnoremap \r :action ReformatCode<CR>
 
 " =============================================================================
 "  GIT (LazyGit equivalent)
@@ -99,13 +102,11 @@ nnoremap <leader>gb :action Git.Branches<CR>
 "  TERMINAL
 " =============================================================================
 nnoremap <leader>ft :action ActivateTerminalToolWindow<CR>
-nnoremap <C-/> :action ActivateTerminalToolWindow<CR> " Ctrl+/ to toggle terminal
+nnoremap <C-/> :action ActivateTerminalToolWindow<CR>
 
 " =============================================================================
 "  WINDOW MANAGEMENT HELPER
 " =============================================================================
-" If you get stuck in a tool window, this is the universal "Close Active Tool Window"
-" (Equivalent to Shift+Esc in standard IntelliJ)
 nnoremap <leader>q :action HideActiveWindow<CR>
 
 " =============================================================================
@@ -127,3 +128,9 @@ nnoremap <Esc> :nohlsearch<CR>
 " =========================
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
+
+" =========================
+" Structural Navigation Jumps
+" =========================
+nnoremap [H :action EditorUp<CR>
+nnoremap [L :action EditorDown<CR>
