@@ -80,6 +80,7 @@ nnoremap gi :action GotoImplementation<CR>
 
 " Actions
 nnoremap K :action QuickJavaDoc<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <leader>cr :action RenameElement<CR>
 
 " Diagnostics (Trouble.nvim equivalent)
